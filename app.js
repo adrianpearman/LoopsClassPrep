@@ -10,7 +10,8 @@ for (var i = 0; i < classList.length; i++) {
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
   // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+  //   while(0 !== currentIndex) -- this line is the same as the line below but utilizes the concept of truthy and falsy in JavaScript. More information available at https://www.sitepoint.com/javascript-truthy-falsy/ 
+  while (currentIndex) {
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
