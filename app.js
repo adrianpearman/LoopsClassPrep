@@ -2,8 +2,10 @@ var classList = ['Aaron Colbert', 'Adriana Shulman', 'Ananya Bala', 'Andre Brown
 
 // prints to the screen the original list of students
 for (var i = 0; i < classList.length; i++) {
-  document.write(classList[i] + "<br />");
+    document.write(classList[i] + '<br />') 
 }
+
+console.log(classList)
 
 // ES5
 // function to randomize the array list
@@ -22,8 +24,8 @@ function shuffle(array) {
   }
   return array;
 }
-randomizedList = shuffle(classList)
 
+randomizedList = shuffle(classList)
 document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // prints to the screen the randomized list of students
@@ -32,46 +34,62 @@ for (var i = 0; i < randomizedList.length; i++){
 }
 document.write("<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
+console.log(classList)
 
-// Prints the individual tabel lists
+// Prints the individual table lists
 // Table 1
 for (var i = 0; i < 4; i++){
     document.write('Table #1: ' + classList[i] + '<br/>');
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 2
 for (var i = 4; i < 8; i++){
     document.write("Table #2: " + classList[i] + "<br/>");
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 3
 for (var i = 8; i < 12; i++){
     document.write('Table #3: ' + classList[i] + '<br/>');
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 4
 for (var i = 12; i < 16; i++){
     document.write('Table #4: ' + classList[i] + '<br/>');
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 5
 for (var i = 16; i < 20; i++){
     document.write('Table #5: ' + classList[i] + '<br/>');
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 6
 for (var i = 20; i < 24; i++){
     document.write('Table #6: ' + classList[i] + '<br/>');
 }
-document.write( "<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
 // Table 7
 for (var i = 24; i < classList.length; i++){
     document.write('Table #7: ' + classList[i] + '<br/>');
 }
+document.write("<br/>" + "<br/>" + "---------------------" + "<br/>" + "<br/>");
 
+// DRY Version
+var i = 0
+var classListLength = classList.length
+for (i; i < classListLength; i++) {
+    if (i < 4) {
+        document.write('Table #1: ' + classList[i] + '<br/>');
+    }else if (i > 3 && i < 8) {
+        document.write('Table #2: ' + classList[i] + '<br/>');
+    }else if (i > 7 && i < 12) {
+        document.write('Table #3: ' + classList[i] + '<br/>');
+    }else if (i > 11 && i < 16) {
+        document.write('Table #4: ' + classList[i] + '<br/>');
+    }else if (i > 15 && i < 20) {
+        document.write('Table #5: ' + classList[i] + '<br/>');
+    }else if (i > 19 && i < 24) {
+        document.write('Table #6: ' + classList[i] + '<br/>');
+    }else if (i > 23) {
+        document.write('Table #7: ' + classList[i] + '<br/>');
+    }
+}
